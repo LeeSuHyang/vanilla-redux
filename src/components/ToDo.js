@@ -1,21 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { actionCreators } from "../store";
+import { remove } from "../store";
 
 const ToDo = ({ text, onBtnClick, id }) => {
   return (
     <li>
-      <Link to={`/${id}`}>
-        {text} <button onClick={onBtnClick}>DELETE</button>
-      </Link>
+      <Link to={`/${id}`}> {text} </Link>
+      <button onClick={onBtnClick}>DELETE</button>
     </li>
   );
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
+  console.log(ownProps.id);
   return {
-    onBtnClick: () => dispatch(actionCreators.deleteTodo(ownProps.id)),
+    onBtnClick: () => dispatch(remove(ownProps.id)),
   };
 };
 
