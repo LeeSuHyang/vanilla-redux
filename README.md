@@ -26,3 +26,15 @@
 
 - state를 Mutate 하면 절대 안된다. (직접 상태를 수정X, Object를 return해서 사용하는 것.)
   ex) etc.push("값추가"); <- 이런 것을 하지 않는 것이 핵심.
+
+---
+
+# REACT-REDUX
+
+### 1. connect
+
+- 컴포넌트를 Store에 연결 해 준다.
+- store.dispatch() : setter
+- store.getState() : getter
+- mapStateToProps : 기본적으로 함수이며 state, 컴포넌트의 props가 args. === getState() 기능임.
+- mapDispatchToProps : 데이터를 보내는 측에서 dispatch를 동작하여 리덕스에 보내는 것 가능.
